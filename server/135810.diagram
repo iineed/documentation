@@ -1,0 +1,36 @@
+format 76
+
+classinstance 128002 class_ref 128130 // server
+  name ""   xyz 569.5 43 2000 life_line_z 2000
+note 128130 "proposal id
+need id
+fulfiller name
+message"
+  xyzwh 310.5 137 2000 81 77
+classinstance 128258 class_ref 128258 // fulfiller
+  name ""   xyz 91.5 43 2000 life_line_z 2000
+note 128386 "proposal id"
+  xyzwh 309.5 253 2020 75 35
+durationcanvas 128514 classinstance_ref 128258 // :fulfiller
+  xyzwh 105 132 2010 11 127
+end
+durationcanvas 128642 classinstance_ref 128002 // :server
+  xyzwh 583 132 2010 11 127
+end
+msg 128770 return
+  from durationcanvas_ref 128642
+  to durationcanvas_ref 128514
+  yz 248 2015 explicitmsg "acknowledge post"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 292.5 234
+msg 128898 synchronous
+  from durationcanvas_ref 128514
+  to durationcanvas_ref 128642
+  yz 132 2015 explicitmsg "update proposal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "proposal id
+need id
+fulfiller name
+message"
+  label_xy 313.5 118
+end

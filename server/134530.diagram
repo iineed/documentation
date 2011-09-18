@@ -1,0 +1,39 @@
+format 76
+
+classinstance 128386 class_ref 128130 // server
+  name ""   xyz 569 27 2000 life_line_z 2000
+classinstance 128514 class_ref 128002 // needer
+  name ""   xyz 147 32 2000 life_line_z 2000
+note 129026 "needer name
+description
+time
+place"
+  xyzwh 349 113 2020 77 79
+note 129410 "need id"
+  xyzwh 350 223 2000 61 35
+durationcanvas 128642 classinstance_ref 128514 // :needer
+  xyzwh 162 106 2010 11 40
+end
+durationcanvas 128770 classinstance_ref 128386 // :server
+  xyzwh 583 108 2010 11 134
+end
+durationcanvas 129154 classinstance_ref 128514 // :needer
+  xyzwh 162 123 2010 11 119
+end
+msg 128898 synchronous
+  from durationcanvas_ref 128642
+  to durationcanvas_ref 128770
+  yz 108 2015 explicitmsg "post need"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "needer name
+description
+time
+place"
+  label_xy 354 94
+msg 129282 return
+  from durationcanvas_ref 128770
+  to durationcanvas_ref 129154
+  yz 218 2025 explicitmsg "acknowledge post"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 334 204
+end

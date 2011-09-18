@@ -1,0 +1,13 @@
+window_sizes 1366 706 320 960 512 82
+diagrams
+  usecasediagram_ref 128002 // needer-server-fulfiller
+    828 440 100 4 0 0
+  active  sequencediagram_ref 136066 // list own proposals
+    1040 550 100 4 0 0
+end
+show_stereotypes
+selected sequencediagram_ref 135426 // list own needs
+open
+  usecaseview_ref 128002 // server interaction
+end
+end

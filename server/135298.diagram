@@ -1,0 +1,35 @@
+format 76
+
+classinstance 128002 class_ref 128130 // server
+  name ""   xyz 574.5 57 2000 life_line_z 2000
+note 128130 "need id"
+  xyzwh 306.5 237 3005 57 35
+classinstance 128258 class_ref 128002 // needer
+  name ""   xyz 88.5 57 2000 life_line_z 2000
+note 128386 "need id
+needer name"
+  xyzwh 303.5 149 2000 89 49
+durationcanvas 128514 classinstance_ref 128258 // :needer
+  xyzwh 103 161 2010 11 82
+end
+durationcanvas 128642 classinstance_ref 128002 // :server
+  xyzwh 588 144 2010 11 99
+end
+durationcanvas 128770 classinstance_ref 128258 // :needer
+  xyzwh 103 144 2010 11 43
+end
+msg 128898 return
+  from durationcanvas_ref 128642
+  to durationcanvas_ref 128514
+  yz 232 2015 explicitmsg "acknowledge delete"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 311.5 218
+msg 129026 synchronous
+  from durationcanvas_ref 128770
+  to durationcanvas_ref 128642
+  yz 144 2015 explicitmsg "delete a need"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "need id
+needer name"
+  label_xy 305.5 130
+end

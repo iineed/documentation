@@ -1,0 +1,38 @@
+format 76
+
+note 128002 "need id
+proposal id
+needer name"
+  xyzwh 308 121.5 2000 91 61
+classinstance 128130 class_ref 128130 // server
+  name ""   xyz 555 30 2000 life_line_z 2000
+note 128258 "need id
+proposal id"
+  xyzwh 308 218.5 2000 75 47
+classinstance 128386 class_ref 128002 // needer
+  name ""   xyz 102 30 2000 life_line_z 2000
+durationcanvas 128514 classinstance_ref 128386 // :needer
+  xyzwh 117 116 2010 11 41
+end
+durationcanvas 128642 classinstance_ref 128386 // :needer
+  xyzwh 117 135 2010 11 90
+end
+durationcanvas 128770 classinstance_ref 128130 // :server
+  xyzwh 569 116 2010 11 109
+end
+msg 128898 return
+  from durationcanvas_ref 128770
+  to durationcanvas_ref 128642
+  yz 213 2020 explicitmsg "acknowledge decline"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 298 200
+msg 129026 synchronous
+  from durationcanvas_ref 128514
+  to durationcanvas_ref 128770
+  yz 116 2015 explicitmsg "decline proposal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "need id
+proposal id
+needer name"
+  label_xy 309 103
+end

@@ -1,0 +1,35 @@
+format 76
+
+classinstance 128002 class_ref 128258 // fulfiller
+  name ""   xyz 110 68 2000 life_line_z 2000
+classinstance 128130 class_ref 128130 // server
+  name ""   xyz 554 66 2000 life_line_z 2000
+note 128642 "fullfiller name"
+  xyzwh 321 163 2000 97 37
+note 128898 "{
+proposal id
+need id
+message
+accepted flag
+}"
+  xyzwh 320 236 2000 93 105
+durationcanvas 128258 classinstance_ref 128002 // :fulfiller
+  xyzwh 124 158 2010 11 97
+end
+durationcanvas 128386 classinstance_ref 128130 // :server
+  xyzwh 568 158 2010 11 97
+end
+msg 128514 synchronous
+  from durationcanvas_ref 128258
+  to durationcanvas_ref 128386
+  yz 158 2015 explicitmsg "request list"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "fulfiller name"
+  label_xy 325 144
+msg 128770 return
+  from durationcanvas_ref 128386
+  to durationcanvas_ref 128258
+  yz 231 2015 explicitmsg "proposal list"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 322 217
+end

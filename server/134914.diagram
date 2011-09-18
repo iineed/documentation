@@ -1,0 +1,35 @@
+format 76
+
+classinstance 128002 class_ref 128002 // needer
+  name ""   xyz 96 52 2000 life_line_z 2000
+classinstance 128130 class_ref 128130 // server
+  name ""   xyz 582 52 2000 life_line_z 2000
+note 128898 "need id
+needer name"
+  xyzwh 306 129 2000 73 45
+note 129026 "need id"
+  xyzwh 309 217 3005 57 35
+durationcanvas 128258 classinstance_ref 128002 // :needer
+  xyzwh 111 125 2010 11 42
+end
+durationcanvas 128386 classinstance_ref 128130 // :server
+  xyzwh 596 125 2010 11 98
+end
+durationcanvas 128642 classinstance_ref 128002 // :needer
+  xyzwh 111 141 2010 11 82
+end
+msg 128514 synchronous
+  from durationcanvas_ref 128258
+  to durationcanvas_ref 128386
+  yz 125 2015 explicitmsg "mark need as fulfilled"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "need id
+needer name"
+  label_xy 308 111
+msg 128770 return
+  from durationcanvas_ref 128386
+  to durationcanvas_ref 128642
+  yz 212 2015 explicitmsg "acknowledge mark"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 314 198
+end

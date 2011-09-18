@@ -1,0 +1,99 @@
+format 76
+
+classcanvas 128002 class_ref 128002 // needer
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 14 130 2000
+end
+usecasecanvas 128130 usecase_ref 128002 // post a need
+  xyzwh 221 14 3005 64 32 label_xy 224 46
+end
+usecasecanvas 128258 usecase_ref 128130 // update a need
+  xyzwh 219 65 3005 64 32 label_xy 217 97
+end
+usecasecanvas 128386 usecase_ref 128258 // delete a need
+  xyzwh 217 320 3005 64 32 label_xy 217 352
+end
+usecasecanvas 128514 usecase_ref 128386 // list own needs
+  xyzwh 222 396 3005 64 32 label_xy 219 428
+end
+usecasecanvas 128642 usecase_ref 128514 // accept proposal to fulfill a need
+  xyzwh 207 161 3005 64 32 label_xy 164 193
+end
+usecasecanvas 128770 usecase_ref 128642 // decline proposal to fulfill a need
+  xyzwh 211 222 3010 64 32 label_xy 167 254
+end
+classcanvas 129666 class_ref 128130 // server
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 424 125 2000
+end
+classcanvas 132354 class_ref 128258 // fulfiller
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 771 152 2000
+end
+usecasecanvas 132482 usecase_ref 128770 // list other's needs
+  xyzwh 573 81 3005 64 32 label_xy 564 113
+end
+usecasecanvas 132610 usecase_ref 128898 // propose to fulfill a need
+  xyzwh 580 133 3005 64 32 label_xy 556 165
+end
+usecasecanvas 132994 usecase_ref 129282 // list own proposals
+  xyzwh 581 335 3005 64 32 label_xy 568 367
+end
+usecasecanvas 135170 usecase_ref 135810 // mark a need as fulfilled
+  xyzwh 212 114 3005 64 32 label_xy 188 146
+end
+usecasecanvas 135810 usecase_ref 135938 // update a proposal
+  xyzwh 582 188 3005 64 32 label_xy 571 220
+end
+usecasecanvas 135938 usecase_ref 136066 // delete a proposal
+  xyzwh 575 251 3011 64 32 label_xy 566 283
+end
+line 128898 --->
+  from ref 128002 z 3006 to ref 128130
+line 129026 --->
+  from ref 128002 z 3006 to ref 128258
+line 129154 --->
+  from ref 128002 z 3006 to ref 128386
+line 129282 --->
+  from ref 128002 z 3006 to ref 128514
+line 129410 --->
+  from ref 128002 z 3006 to ref 128642
+line 129538 --->
+  from ref 128002 z 3011 to ref 128770
+line 131586 ----
+  from ref 128130 z 3006 to ref 129666
+line 131714 ----
+  from ref 128258 z 3006 to ref 129666
+line 131842 ----
+  from ref 128386 z 3006 to ref 129666
+line 131970 ----
+  from ref 128514 z 3006 to ref 129666
+line 132098 ----
+  from ref 128642 z 3006 to ref 129666
+line 132226 ----
+  from ref 128770 z 3011 to ref 129666
+line 133122 --->
+  from ref 132354 z 3006 to ref 132482
+line 133250 --->
+  from ref 132354 z 3006 to ref 132610
+line 133634 --->
+  from ref 132354 z 3006 to ref 132994
+line 133762 ----
+  from ref 132482 z 3006 to ref 129666
+line 134274 ----
+  from ref 132610 z 3006 to ref 129666
+line 135042 ----
+  from ref 132994 z 3006 to ref 129666
+line 135298 --->
+  from ref 128002 z 3006 to ref 135170
+line 135682 ----
+  from ref 135170 z 3006 to ref 129666
+line 136066 --->
+  from ref 132354 z 3012 to ref 135938
+line 136194 --->
+  from ref 132354 z 3006 to ref 135810
+line 136322 ----
+  from ref 135938 z 3012 to ref 129666
+line 136450 ----
+  from ref 129666 z 3006 to ref 135810
+end

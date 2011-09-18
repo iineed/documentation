@@ -1,0 +1,41 @@
+format 76
+
+classinstance 128002 class_ref 128002 // needer
+  name ""   xyz 69 29 2000 life_line_z 2000
+classinstance 128130 class_ref 128130 // server
+  name ""   xyz 494 28 2000 life_line_z 2000
+note 128898 "need id
+needer name
+description
+time
+place"
+  xyzwh 266 110 2000 75 89
+note 129026 "need id"
+  xyzwh 268 229 2000 55 35
+durationcanvas 128258 classinstance_ref 128002 // :needer
+  xyzwh 84 104 2010 11 40
+end
+durationcanvas 128386 classinstance_ref 128130 // :server
+  xyzwh 508 105 2010 11 163
+end
+durationcanvas 128642 classinstance_ref 128002 // :needer
+  xyzwh 84 124 2010 11 144
+end
+msg 128514 synchronous
+  from durationcanvas_ref 128258
+  to durationcanvas_ref 128386
+  yz 105 2015 explicitmsg "update need"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "need id
+needer name
+description
+time
+place"
+  label_xy 271 91
+msg 128770 return
+  from durationcanvas_ref 128386
+  to durationcanvas_ref 128642
+  yz 224 2020 explicitmsg "acknowledge update"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 269 209
+end
